@@ -1,0 +1,25 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.high-scores {
+    font-size: 32px;
+    text-decoration: none;
+}
+
+.page-title {
+    font-size: 69px;
+    font-weight: bold;
+}
+
+.time-remaining {
+    font-size: 32px;
+
+}
