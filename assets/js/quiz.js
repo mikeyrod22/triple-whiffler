@@ -1,3 +1,22 @@
+let timeRemainingEl = document.querySelector('#time-remaining')
+let timeRemaining;
+
+function start() {
+    timeRemaining = 100;
+    console.log(`Time Remaining: ${timeRemaining}`);
+    let timerSetInterval = setInterval(function(){
+        if (timeRemaining < 1) {
+            timeRemaining = 0;
+            timeRemainingEl.innerHTML = timeRemaining;
+            clearInterval(timerSetInterval);
+            return;
+        }
+        timeRemaining--;
+        timeRemainingEl.innerHTML = `Time Remaining: ${timeRemaining}`;
+        console.log(`Time Remaining: ${timeRemaining}`);
+    }, 1000);
+} 
+
 // AS A coding boot camp student
 // I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
 // SO THAT I can gauge my progress compared to my peers
