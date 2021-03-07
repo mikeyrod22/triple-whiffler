@@ -13,7 +13,7 @@ let questionsArray = [questOne, questTwo, questThree, questFour, questFive, ques
 let timeRemainingEl = document.querySelector('#time-remaining');
 let timeRemaining;
 
-function start() {
+function startTimer() {
     timeRemaining = 100;
     timeRemainingEl.innerHTML = `Time Remaining: ${timeRemaining}`;
     console.log(`Time Remaining: ${timeRemaining}`);
@@ -29,6 +29,14 @@ function start() {
         console.log(`Time Remaining: ${timeRemaining}`);
     }, 1000);
 } 
+
+function displayQuestion() {
+    let questionCard = document.createElement("div");
+    let questionString = document.createTextNode(questOne.question);
+    questionCard.className = "question-card";
+    questionCard.appendChild(questionString);
+    document.body.appendChild(questionCard);
+}
 
 // AS A coding boot camp student
 // I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
