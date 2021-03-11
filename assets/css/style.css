@@ -6,26 +6,37 @@
 
 .header {
     display: flex;
-    justify-content: space-between;
-    background-color: rgba(155, 18, 18, 0.329);
-    
+    background-color: rgba(109, 3, 3, 0.664);
 }
 
 .high-scores {
     font-size: 32px;
+    text-align: left;
+    width: 20%;
+}
+
+.high-scores a {
     text-decoration: none;
 }
 
 .page-title {
     font-size: 69px;
     font-weight: bold;
+    text-align: center;
+    width: 60%;
 }
 
 .countdown {
     font-size: 32px;
+    text-align: right;
+    width: 20%;
 }
 
 .question-card {
-    font-family: 50px;
     background-color: pink;
+}
+
+.question-card h2 {
+    text-align: center;
+    font-size: 50px;
 }
