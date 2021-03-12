@@ -2,58 +2,58 @@
 let questOne = {
     question:"What symbol is used to select elements by class in CSS?", 
     correct:".", 
-    incorrectOne: "#", 
+    incorrectOne:"#", 
     incorrectTwo:"*", 
     incorrectThree:"$"
 };
 let questTwo = {
     question:"What data type is captured when a user responds to the window.prompt() method?", 
     correct:"string", 
-    incorrectOne: "number", 
+    incorrectOne:"number", 
     incorrectTwo:"boolean", 
     incorrectThree:"array"
 };
 let questThree = {
-    question:"2+2", 
-    correct:"4", 
-    incorrectOne: "1", 
-    incorrectTwo:"2", 
-    incorrectThree:"3"
+    question:"Which of the following is not a javascript keyword for a variable?", 
+    correct:"set", 
+    incorrectOne: "var", 
+    incorrectTwo:"let", 
+    incorrectThree:"const"
 };
 let questFour = {
-    question:"2+2", 
-    correct:"4", 
-    incorrectOne: "1", 
-    incorrectTwo:"2", 
-    incorrectThree:"3"
+    question:"Which html element does not require a closing tag?", 
+    correct:"img", 
+    incorrectOne:"header", 
+    incorrectTwo:"p", 
+    incorrectThree:"a"
 };
 let questFive = {
-    question:"2+2", 
-    correct:"4", 
-    incorrectOne: "1", 
-    incorrectTwo:"2", 
-    incorrectThree:"3"
+    question:"How do you create a function named 'myFunction'?", 
+    correct:"function myFunction();", 
+    incorrectOne: "create.function(myFunction);", 
+    incorrectTwo:"function = myFunction();", 
+    incorrectThree:'function():"myFunction";'
 };
 let questSix = {
-    question:"2+2", 
-    correct:"4", 
-    incorrectOne: "1", 
-    incorrectTwo:"2", 
-    incorrectThree:"3"
+    question:"How do you write the 'not equal to' javascript operator?", 
+    correct:"!=", 
+    incorrectOne:"/=", 
+    incorrectTwo:"==", 
+    incorrectThree:"?"
 };
 let questSeven = {
-    question:"2+2", 
-    correct:"4", 
-    incorrectOne: "1", 
-    incorrectTwo:"2", 
-    incorrectThree:"3"
+    question:"How do you add a comment in CSS?", 
+    correct:"/* This is a comment. */", 
+    incorrectOne:"<!-- This is a comment. -->", 
+    incorrectTwo:"*** This is a comment. ***", 
+    incorrectThree:"// This is a comment."
 };
 let questEight = {
-    question:"2+2", 
-    correct:"4", 
-    incorrectOne: "1", 
-    incorrectTwo:"2", 
-    incorrectThree:"3"
+    question:"Which of the following values evaluates to false in javascript?", 
+    correct:"0", 
+    incorrectOne:"'0'", 
+    incorrectTwo:"-1", 
+    incorrectThree:"'empty'"
 };
 
 let questionObjectsArray = [questOne, questTwo, questThree, questFour, questFive, questSix, questSeven, questEight,];
