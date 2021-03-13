@@ -34,9 +34,59 @@
 
 .question-card {
     background-color: pink;
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.example {
+    text-align: center;
+    background-color: lightpink;
+    width: 80%;
+    margin: 0 auto;
 }
 
 .question-card h2 {
     text-align: center;
     font-size: 50px;
+    border-bottom: solid 3px maroon;
+    margin: 0.1em auto;
+}
+
+.question-card ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 1em;
+}
+
+.answers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;   
+    margin-bottom: 1em;
+}
+
+.answers p {
+    margin-left: 1em;
+}
+
+.user-buttons {
+    display: flex;
+    flex-direction: column;
+}
+.user-buttons button {
+    width: 10%;
+    height: 2em;
+    margin: 0 0.5em 0.5em auto;
+    background-color: beige;
+    border: none;
+    border-radius: 10%;
+    font-weight: bolder;   
+}
+
+.footer {
+    background-color: rgba(109, 3, 3, 0.664);
+    text-align: center;
 }
