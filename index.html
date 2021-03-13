@@ -23,8 +23,28 @@
             <p class="example">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora consequatur hic, error aspernatur pariatur aperiam omnis quia necessitatibus assumenda ducimus!
             </p>
-            <ul>
-                <!-- These buttons need to be radio listeners-->
+            <form>
+                <ul>
+                    <li>
+                        <input type="radio" id="correct" name="answer" value="correct">
+                        <label for="correct">this is the answer</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="incorrect1" name="answer" value="incorrect">
+                        <label for="correct">this is not the answer</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="incorrect2" name="answer" value="incorrect">
+                        <label for="correct">this is not the answer</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="incorrect3" name="answer" value="incorrect">
+                        <label for="correct">this is not the answer</label>
+                    </li>
+                <input type="submit" class="question-card-button" value="Submit">
+                <input type="button" class="question-card-button" value="Skip">
+            </form>
+            <!-- <ul>
                 <li class="answers">
                     <button>A</button>
                     <p>correct</p>
@@ -45,7 +65,7 @@
             <div class="user-buttons">
                 <button>submit</button>
                 <button>skip</button>
-            </div>
+            </div> -->
         </section>
     </main>
     <footer class="footer">

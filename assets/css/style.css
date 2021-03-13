@@ -60,7 +60,7 @@
     list-style: none;
     margin: 1em;
 }
-
+/*
 .answers {
     display: flex;
     flex-wrap: wrap;
@@ -76,7 +76,8 @@
     display: flex;
     flex-direction: column;
 }
-.user-buttons button {
+*/
+.question-card-button {
     width: 10%;
     height: 2em;
     margin: 0 0.5em 0.5em auto;
@@ -89,4 +90,4 @@
 .footer {
     background-color: rgba(109, 3, 3, 0.664);
     text-align: center;
-}
+} 
