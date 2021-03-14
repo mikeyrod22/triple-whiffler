@@ -1,4 +1,3 @@
-
 let questOne = {
     question:"What symbol is used to select elements by class in CSS?", 
     correct:".", 
@@ -77,29 +76,6 @@ function startTimer() {
         // console.log(`Time Remaining: ${timeRemaining}`);
     }, 1000);
 } 
-
-let mainEl = document.querySelector("#main");
-let questionCardEl = document.createElement("div");
-let questionCardH2 = document.createElement("h2");
-
-function displayQuestionCard(selectedQuestion) {
-    if (mainEl.contains(questionCardEl)) {
-        questionCardEl.removeChild(questionCardH2)
-        questionCardEl.remove();
-    } 
-    questionCardEl.className = "question-card";
-    questionCardH2.innerText = selectedQuestion.question;
-    questionCardEl.appendChild(questionCardH2);
-    mainEl.appendChild(questionCardEl);
-}
-
-function beginQuiz() {
-    var i = 0;
-    startTimer();
-    displayQuestionCard(questionObjectsArray[i])
-    }
-
-
 // AS A coding boot camp student
 // I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
 // SO THAT I can gauge my progress compared to my peers
@@ -115,9 +91,3 @@ function beginQuiz() {
 // THEN the game is over
 // WHEN the game is over
 // THEN I can save my initials and score
-
-// ISSUES BRAINSTORM
-/*
-display questions to page
-create link that redirects to local storage
-*/
