@@ -57,6 +57,7 @@ let questEight = {
 };
 
 let questionObjectsArray = [questOne, questTwo, questThree, questFour, questFive, questSix, questSeven, questEight,];
+let answersArray = []
 
 // Element Variables
 let mainEl = document.querySelector("#main");
@@ -76,8 +77,7 @@ mainEl.removeChild(questionCardEl);
 
 // Timer
 let timeRemainingEl = document.querySelector('#time-remaining');
-let timeRemaining
-
+let timeRemaining;
 function startTimer() {
     timeRemaining = 100;
     timeRemainingEl.innerHTML = `Time Remaining: ${timeRemaining}`;
@@ -91,15 +91,41 @@ function startTimer() {
         timeRemaining--;
         timeRemainingEl.innerHTML = `Time Remaining: ${timeRemaining}`;
     }, 1000);
-} 
+}
 
+// Shuffle order of an array
+function shuffle(selectedArray) {
+    let m = selectedArray.length, t, i;
+    while (m) {
+      i = Math.floor(Math.random() * m--);
+      t = selectedArray[m];
+      selectedArray[m] = selectedArray[i];
+      selectedArray[i] = t;
+    }
+    return selectedArray;
+}
+
+// Generate Question Card
+function generateQuestionCard(selectedQuestion) {
+    questionEl.innerText = selectedQuestion.question;
+    answersArray = [selectedQuestion.correct, selectedQuestion.incorrectOne, selectedQuestion.incorrectTwo, selectedQuestion.incorrectThree]
+    shuffle(answersArray);
+    answerA.innerText = answersArray[0];
+    answerB.innerText = answersArray[1];
+    answerC.innerText = answersArray[2];
+    answerD.innerText = answersArray[3]
+}
+
+// Begin Quiz
 function beginQuiz() {
     mainEl.removeChild(beginQuizEl);
     mainEl.appendChild(questionCardEl);
+    shuffle(questionObjectsArray);
+    generateQuestionCard(questionObjectsArray[0]);
     startTimer();
 }
-
 beginButtonEl.addEventListener("click", beginQuiz);
+
 // AS A coding boot camp student
 // I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
 // SO THAT I can gauge my progress compared to my peers
