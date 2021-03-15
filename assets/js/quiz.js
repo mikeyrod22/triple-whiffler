@@ -72,7 +72,7 @@ function shuffle(selectedArray) {
 }
 
 // Element Variables
-let localStorage = document.querySelector("#local-storage");
+let localStorageLink = document.querySelector("#local-storage");
 let mainEl = document.querySelector("#main");
 let beginQuizEl = document.querySelector("#begin-quiz-container");
 let beginButtonEl = document.querySelector("#begin-button");
@@ -139,7 +139,7 @@ function endQuiz(){
     userInitials = window.prompt(`Your final score was ${score}. Please enter your initials to save your score.`);
     localStorage.setItem(`initials: ${userInitials}`, `score: ${score}`);
 }
-localStorage.addEventListener("click", function(){alert("Navigate to local storage using your developer tools to see your scores.")});
+localStorageLink.addEventListener("click", function(){alert("Navigate to local storage using your developer tools to see your scores.")});
 
 // Submit Answer
 function submitAnswer() {    
