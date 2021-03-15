@@ -61,6 +61,8 @@ let answersArray = []
 
 // Element Variables
 let mainEl = document.querySelector("#main");
+let beginQuizEl = document.querySelector("#begin-quiz-container");
+let beginButtonEl = document.querySelector("#begin-button");
 let questionCardEl = document.querySelector("#question-card");
 let questionEl = document.querySelector("#question-card-question");
 let answerA = document.querySelector("#label-a");
@@ -69,8 +71,6 @@ let answerC = document.querySelector("#label-c");
 let answerD = document.querySelector("#label-d");
 let submitEl = document.querySelector("#submit");
 let skipEl = document.querySelector("#skip");
-let beginQuizEl = document.querySelector("#begin-quiz-container");
-let beginButtonEl = document.querySelector("#begin-button");
 
 // Load Page Without Question Card Displayed
 mainEl.removeChild(questionCardEl);
@@ -117,6 +117,7 @@ function generateQuestionCard(selectedQuestion) {
 }
 
 // Begin Quiz
+let qoaIndex = 0;
 function beginQuiz() {
     mainEl.removeChild(beginQuizEl);
     mainEl.appendChild(questionCardEl);
@@ -125,6 +126,30 @@ function beginQuiz() {
     startTimer();
 }
 beginButtonEl.addEventListener("click", beginQuiz);
+
+// Submit Answer
+function submitAnswer(event) {
+    if (qoaIndex === (questionObjectsArray.length - 1)) {
+        mainEl.removeChild(questionCardEl);
+        return;
+    }
+    qoaIndex++;
+    generateQuestionCard(questionObjectsArray[qoaIndex]);
+    event.preventDefault();
+}
+submitEl.addEventListener("click", submitAnswer);
+
+// Skip Answer
+function skipAnswer() {
+    if (qoaIndex === (questionObjectsArray.length - 1)) {
+        mainEl.removeChild(questionCardEl);
+        return;
+    }
+    qoaIndex++;
+    generateQuestionCard(questionObjectsArray[qoaIndex]);
+    event.preventDefault();
+}
+skipEl.addEventListener("click", skipAnswer);
 
 // AS A coding boot camp student
 // I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
