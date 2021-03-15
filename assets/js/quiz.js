@@ -72,6 +72,7 @@ function shuffle(selectedArray) {
 }
 
 // Element Variables
+let localStorageLink = document.querySelector()
 let mainEl = document.querySelector("#main");
 let beginQuizEl = document.querySelector("#begin-quiz-container");
 let beginButtonEl = document.querySelector("#begin-button");
@@ -133,11 +134,18 @@ function beginQuiz() {
 }
 beginButtonEl.addEventListener("click", beginQuiz);
 
+// End Quiz
+function endQuiz(){
+    userInitials = window.prompt(`Your final score was ${score}. Please enter your initials to save your score.`);
+    localStorage.setItem(`initials: ${userInitials}`, `score: ${score}`);
+}
+
 // Submit Answer
 function submitAnswer() {    
     if (qoaIndex === (questionObjectsArray.length - 1)) {
         timeRemaining = 0;
         mainEl.removeChild(questionCardEl);
+        endQuiz();
         return;
     }
     // Validate And Determine User Answer
@@ -172,6 +180,7 @@ function skipQuestion() {
     if (qoaIndex === (questionObjectsArray.length - 1)) {
         timeRemaining = 0;
         mainEl.removeChild(questionCardEl);
+        endQuiz();
         return;
     }
         // Present Next Question
