@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css"></link>
+    <title>Triple Whiffler</title>
+</head>
+<body>
+    <header class="header">
+        <div id="local-storage" class="local-storage">
+            <a href="">High Scores</a>
+        </div>
+        <div class="page-title">
+            Triple Whiffler
+        </div>
+        <div class="countdown" id="time-remaining"></div>
+    </header>
+    <main id="main">
+        <section id="begin-quiz-container" class="container begin-quiz">
+            <h2>
+                Welcome to... Triple Whiffler
+            </h2>
+            <p>
+                This is a timed coding quiz that will test your knowledge of HTML, CSS, and Javascript. You will be presented with eight questions and up to one hundred seconds to answer them. Correct answers will increase your score. Incorrect answers will decrease the time remaining by 10 seconds. The quiz will end when the time runs out or when all questions are answered, whichever comes first.<br><span class="b-q-g-l">Good Luck!</span>
+            </p>
+            <h3>
+                Press the button below to begin the quiz.
+            </h3>
+            <button id="begin-button">Begin</button>
+        </section>
+        <section id="question-card" class="container question-card">
+            <h2 id="question-card-question"></h2> 
+                <ul>
+                    <li>
+                        <input type="radio" id="radio-a" name="answer">
+                        <label for="radio-a" id ="label-a"></label>
+                    </li>
+                    <li>
+                        <input type="radio" id="radio-b" name="answer">
+                        <label for="radio-b" id="label-b"></label>
+                    </li>
+                    <li>
+                        <input type="radio" id="radio-c" name="answer">
+                        <label for="radio-c" id="label-c"></label>
+                    </li>
+                    <li>
+                        <input type="radio" id="radio-d" name="answer">
+                        <label for="radio-d" id="label-d"></label>
+                    </li>
+                </ul>
+            <button id="submit">Submit</button>
+            <button id="skip">Skip</button>
+        </section>
+    </main>
+    <script type="text/Javascript" src="./assets/js/quiz.js"></script>
+</body>
+</html>
