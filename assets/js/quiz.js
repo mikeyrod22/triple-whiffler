@@ -1,4 +1,4 @@
-// Questions
+// Question Objects
 let questOne = {
     question:"What symbol is used to select elements by class in CSS?", 
     correct:".", 
@@ -14,7 +14,7 @@ let questTwo = {
     incorrectThree:"array"
 };
 let questThree = {
-    question:"Which of the following is not a javascript keyword for a variable?", 
+    question:"Which of the following is not a javascript keyword for declaring a variable?", 
     correct:"set", 
     incorrectOne: "var", 
     incorrectTwo:"let", 
@@ -28,7 +28,7 @@ let questFour = {
     incorrectThree:"a"
 };
 let questFive = {
-    question:"How do you create a function named 'myFunction'?", 
+    question:"How do you declare a function named 'myFunction' in javascript?", 
     correct:"function myFunction();", 
     incorrectOne: "create.function(myFunction);", 
     incorrectTwo:"function = myFunction();", 
@@ -59,12 +59,29 @@ let questEight = {
 let questionObjectsArray = [questOne, questTwo, questThree, questFour, questFive, questSix, questSeven, questEight,];
 let answersArray = []
 
+// Shuffle order of an array
+function shuffle(selectedArray) {
+    let m = selectedArray.length, t, i;
+    while (m) {
+      i = Math.floor(Math.random() * m--);
+      t = selectedArray[m];
+      selectedArray[m] = selectedArray[i];
+      selectedArray[i] = t;
+    }
+    return selectedArray;
+}
+
 // Element Variables
 let mainEl = document.querySelector("#main");
 let beginQuizEl = document.querySelector("#begin-quiz-container");
 let beginButtonEl = document.querySelector("#begin-button");
 let questionCardEl = document.querySelector("#question-card");
 let questionEl = document.querySelector("#question-card-question");
+let radioA = document.querySelector("#radio-a");
+let radioB = document.querySelector("#radio-b");
+let radioC = document.querySelector("#radio-c");
+let radioD = document.querySelector("#radio-d");
+let radioListeners = [radioA, radioB, radioC, radioD];
 let answerA = document.querySelector("#label-a");
 let answerB = document.querySelector("#label-b");
 let answerC = document.querySelector("#label-c");
@@ -93,18 +110,6 @@ function startTimer() {
     }, 1000);
 }
 
-// Shuffle order of an array
-function shuffle(selectedArray) {
-    let m = selectedArray.length, t, i;
-    while (m) {
-      i = Math.floor(Math.random() * m--);
-      t = selectedArray[m];
-      selectedArray[m] = selectedArray[i];
-      selectedArray[i] = t;
-    }
-    return selectedArray;
-}
-
 // Generate Question Card
 function generateQuestionCard(selectedQuestion) {
     questionEl.innerText = selectedQuestion.question;
@@ -118,6 +123,7 @@ function generateQuestionCard(selectedQuestion) {
 
 // Begin Quiz
 let qoaIndex = 0;
+let score = 0;
 function beginQuiz() {
     mainEl.removeChild(beginQuizEl);
     mainEl.appendChild(questionCardEl);
@@ -128,28 +134,54 @@ function beginQuiz() {
 beginButtonEl.addEventListener("click", beginQuiz);
 
 // Submit Answer
-function submitAnswer(event) {
+function submitAnswer() {    
     if (qoaIndex === (questionObjectsArray.length - 1)) {
+        timeRemaining = 0;
         mainEl.removeChild(questionCardEl);
         return;
     }
+    // Validate And Determine User Answer
+    if (radioA.checked === true) {
+        userAnswer = answerA.innerText;
+    } else if (radioB.checked === true) {
+        userAnswer = answerB.innerText;
+    } else if (radioC.checked === true) {
+        userAnswer = answerC.innerText;
+    } else if (radioD.checked === true) {
+        userAnswer = answerD.innerText;
+    } else {
+        return;
+    }
+    // Increment Score or Decrement Time Appropriately
+    if (userAnswer === questionObjectsArray[qoaIndex].correct) {
+        score += 100;
+    } else {
+        timeRemaining -= 10;
+    }
+    // Present Next Question
+    for (var l = 0; l < radioListeners.length; l++) {
+        radioListeners[l].checked = false;
+    }
     qoaIndex++;
     generateQuestionCard(questionObjectsArray[qoaIndex]);
-    event.preventDefault();
 }
 submitEl.addEventListener("click", submitAnswer);
 
-// Skip Answer
-function skipAnswer() {
+// Skip Question
+function skipQuestion() {
     if (qoaIndex === (questionObjectsArray.length - 1)) {
+        timeRemaining = 0;
         mainEl.removeChild(questionCardEl);
         return;
     }
-    qoaIndex++;
-    generateQuestionCard(questionObjectsArray[qoaIndex]);
-    event.preventDefault();
+        // Present Next Question
+        for (var l = 0; l < radioListeners.length; l++) {
+            radioListeners[l].checked = false;
+        }
+        qoaIndex++;
+        generateQuestionCard(questionObjectsArray[qoaIndex]);
 }
-skipEl.addEventListener("click", skipAnswer);
+skipEl.addEventListener("click", skipQuestion);
 
 // AS A coding boot camp student
 // I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
