@@ -1,3 +1,4 @@
+// Questions
 let questOne = {
     question:"What symbol is used to select elements by class in CSS?", 
     correct:".", 
@@ -57,13 +58,24 @@ let questEight = {
 
 let questionObjectsArray = [questOne, questTwo, questThree, questFour, questFive, questSix, questSeven, questEight,];
 
+// Element Variables
+let mainEl = document.querySelector("#main");
+let questionCardEl = document.querySelector("#question-card");
+let questionEl = document.querySelector("#question-card-question");
+let answerA = document.querySelector("#label-a");
+let answerB = document.querySelector("#label-b");
+let answerC = document.querySelector("#label-c");
+let answerD = document.querySelector("#label-d");
+let submitEl = document.querySelector("#submit");
+let skipEl = document.querySelector("#skip");
+
+// Timer
 let timeRemainingEl = document.querySelector('#time-remaining');
-let timeRemaining;
+let timeRemaining
 
 function startTimer() {
     timeRemaining = 100;
     timeRemainingEl.innerHTML = `Time Remaining: ${timeRemaining}`;
-    // console.log(`Time Remaining: ${timeRemaining}`);
     let timerSetInterval = setInterval(function(){
         if (timeRemaining < 1) {
             timeRemaining = 0;
@@ -73,9 +85,9 @@ function startTimer() {
         }
         timeRemaining--;
         timeRemainingEl.innerHTML = `Time Remaining: ${timeRemaining}`;
-        // console.log(`Time Remaining: ${timeRemaining}`);
     }, 1000);
 } 
+
 // AS A coding boot camp student
 // I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
 // SO THAT I can gauge my progress compared to my peers

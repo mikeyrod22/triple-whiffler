@@ -18,37 +18,31 @@
         <div class="countdown" id="time-remaining"></div>
     </header>
     <main id="main">
-        <section class="question-card">
-            <h2>What is the answer?</h2>
-            <p class="example">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora consequatur hic, error aspernatur pariatur aperiam omnis quia necessitatibus assumenda ducimus!
-            </p>
+        <section id="question-card" class="question-card">
+            <h2 id="question-card-question"></h2>
             <form>
                 <ul>
                     <li>
-                        <input type="radio" id="correct" name="answer" value="correct">
-                        <label for="correct">this is the answer</label>
+                        <input type="radio" id="radio-a" name="radio-a" value="a">
+                        <label for="radio-a" id ="label-a"></label>
                     </li>
                     <li>
-                        <input type="radio" id="incorrect1" name="answer" value="incorrect">
-                        <label for="correct">this is not the answer</label>
+                        <input type="radio" id="radio-b" name="radio-b">
+                        <label for="radio-b" id="label-b"></label>
                     </li>
                     <li>
-                        <input type="radio" id="incorrect2" name="answer" value="incorrect">
-                        <label for="correct">this is not the answer</label>
+                        <input type="radio" id="radio-c" name="radio-c">
+                        <label for="radio-c" id="label-c"></label>
                     </li>
                     <li>
-                        <input type="radio" id="incorrect3" name="answer" value="incorrect">
-                        <label for="correct">this is not the answer</label>
+                        <input type="radio" id="radio-d" name="radio-d">
+                        <label for="radio-d" id="label-d"></label>
                     </li>
-                <input type="submit" class="question-card-button" value="Submit">
-                <input type="button" class="question-card-button" value="Skip">
+                <input type="submit" id="submit" class="question-card-button" value="Submit">
+                <input type="button" id="skip" class="question-card-button" value="Skip">
             </form>
         </section>
     </main>
-    <footer class="footer">
-        <h3>Triple Whiffler</h3>
-    </footer>
     <script type="text/Javascript" src="./assets/js/quiz.js"></script>
 </body>
 </html>
