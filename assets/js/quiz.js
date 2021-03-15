@@ -68,6 +68,11 @@ let answerC = document.querySelector("#label-c");
 let answerD = document.querySelector("#label-d");
 let submitEl = document.querySelector("#submit");
 let skipEl = document.querySelector("#skip");
+let beginQuizEl = document.querySelector("#begin-quiz-container");
+let beginButtonEl = document.querySelector("#begin-button");
+
+// Load Page Without Question Card Displayed
+mainEl.removeChild(questionCardEl);
 
 // Timer
 let timeRemainingEl = document.querySelector('#time-remaining');
@@ -88,6 +93,13 @@ function startTimer() {
     }, 1000);
 } 
 
+function beginQuiz() {
+    mainEl.removeChild(beginQuizEl);
+    mainEl.appendChild(questionCardEl);
+    startTimer();
+}
+
+beginButtonEl.addEventListener("click", beginQuiz);
 // AS A coding boot camp student
 // I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
 // SO THAT I can gauge my progress compared to my peers

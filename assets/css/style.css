@@ -32,20 +32,52 @@
     width: 20%;
 }
 
-.question-card {
-    background-color: pink;
-    width: 70%;
-    margin: 0 auto;
+.container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    width: 70%;
+    margin: 1em auto;
+    padding: 2em;
+    background-color: pink;
+    border: solid rgba(109, 3, 3, 0.664) 2px;
+    border-radius: 1%;
+    text-align: center;
 }
 
-.example {
-    text-align: center;
-    background-color: lightpink;
-    width: 80%;
+ .begin-quiz h2 {
+    color:rgba(109, 3, 3, 0.664);
+    font-style: italic;
+    margin: 0.5em;
+    font-size: 32px;
+ }
+ 
+ .begin-quiz p {
+     line-height: 1.3;
+ }
+
+ .b-q-g-l {
+    line-height: 2;
+    font-size: 20px;
+    font-weight: bolder;
+    color: blueviolet;
+ }
+
+ .begin-quiz h3 {
+    color:rgba(109, 3, 3, 0.664);
+    font-style: italic;
+    margin: 0.5em;
+    font-size: 28px;
+ }
+
+ .begin-quiz button {
+    width: 20%;
+    padding: 1em;
     margin: 0 auto;
-}
+    border: none;
+    border-radius: 10%;
+    font-weight: bolder;
+ }
 
 .question-card h2 {
     text-align: center;
@@ -59,24 +91,9 @@
     flex-direction: column;
     list-style: none;
     margin: 1em;
-}
-/*
-.answers {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: left;   
-    margin-bottom: 1em;
+    text-align: left;
 }
 
-.answers p {
-    margin-left: 1em;
-}
-
-.user-buttons {
-    display: flex;
-    flex-direction: column;
-}
-*/
 .question-card-button {
     width: 10%;
     height: 2em;
@@ -85,9 +102,4 @@
     border: none;
     border-radius: 10%;
     font-weight: bolder;   
-}
-
-.footer {
-    background-color: rgba(109, 3, 3, 0.664);
-    text-align: center;
 } 
